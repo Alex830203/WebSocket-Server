@@ -14,7 +14,7 @@ const clients = {}; // 用來追蹤所有用戶的 ID 和暱稱
 
 wss.on('connection', (ws, req) => {
     ws.id = req.headers['sec-websocket-key'].substring(0, 8);
-    ws.nickname = `User_${ws.id}`;
+    ws.nickname = `${ws.id}`;
     ws.isAlive = true;
 
     clients[ws.id] = ws.nickname;
